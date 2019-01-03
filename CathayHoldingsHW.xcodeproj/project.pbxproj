@@ -14,6 +14,8 @@
 		C1B35A6021DDAE7C0030E73C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B35A5E21DDAE7C0030E73C /* LaunchScreen.storyboard */; };
 		C1B35A6321DDAE7C0030E73C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B35A6221DDAE7C0030E73C /* main.m */; };
 		C1B35A6D21DDAE7C0030E73C /* CathayHoldingsHWTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B35A6C21DDAE7C0030E73C /* CathayHoldingsHWTests.m */; };
+		C1B35A7A21DDC66B0030E73C /* ExpandableHeaderTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B35A7921DDC66B0030E73C /* ExpandableHeaderTableView.m */; };
+		C1B35A7F21DDDBC80030E73C /* UIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B35A7E21DDDBC80030E73C /* UIUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 		C1B35A6821DDAE7C0030E73C /* CathayHoldingsHWTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CathayHoldingsHWTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1B35A6C21DDAE7C0030E73C /* CathayHoldingsHWTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CathayHoldingsHWTests.m; sourceTree = "<group>"; };
 		C1B35A6E21DDAE7C0030E73C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1B35A7821DDC66B0030E73C /* ExpandableHeaderTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExpandableHeaderTableView.h; sourceTree = "<group>"; };
+		C1B35A7921DDC66B0030E73C /* ExpandableHeaderTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExpandableHeaderTableView.m; sourceTree = "<group>"; };
+		C1B35A7D21DDDBC80030E73C /* UIUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIUtils.h; sourceTree = "<group>"; };
+		C1B35A7E21DDDBC80030E73C /* UIUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,8 @@
 		C1B35A5221DDAE7B0030E73C /* CathayHoldingsHW */ = {
 			isa = PBXGroup;
 			children = (
+				C1B35A7721DDAE980030E73C /* UI */,
+				C1B35A7C21DDDBB70030E73C /* Utils */,
 				C1B35A5321DDAE7B0030E73C /* AppDelegate.h */,
 				C1B35A5421DDAE7B0030E73C /* AppDelegate.m */,
 				C1B35A5621DDAE7B0030E73C /* ViewController.h */,
@@ -101,6 +109,24 @@
 				C1B35A6E21DDAE7C0030E73C /* Info.plist */,
 			);
 			path = CathayHoldingsHWTests;
+			sourceTree = "<group>";
+		};
+		C1B35A7721DDAE980030E73C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				C1B35A7821DDC66B0030E73C /* ExpandableHeaderTableView.h */,
+				C1B35A7921DDC66B0030E73C /* ExpandableHeaderTableView.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		C1B35A7C21DDDBB70030E73C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C1B35A7D21DDDBC80030E73C /* UIUtils.h */,
+				C1B35A7E21DDDBC80030E73C /* UIUtils.m */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,7 +231,9 @@
 			files = (
 				C1B35A5821DDAE7B0030E73C /* ViewController.m in Sources */,
 				C1B35A6321DDAE7C0030E73C /* main.m in Sources */,
+				C1B35A7A21DDC66B0030E73C /* ExpandableHeaderTableView.m in Sources */,
 				C1B35A5521DDAE7B0030E73C /* AppDelegate.m in Sources */,
+				C1B35A7F21DDDBC80030E73C /* UIUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

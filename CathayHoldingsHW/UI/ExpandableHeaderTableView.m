@@ -83,6 +83,15 @@
 - (id<UITableViewDataSource>)dataSource {
     return _tableView.dataSource;
 }
+
+
+- (void)reloadRowsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation {
+    [_tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:animation];
+}
+
+- (void)insertRowsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation {
+    [_tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:animation];
+}
 @end
 
 @implementation ExpandableHeaderTableView (UITableViewDelegate)
@@ -95,7 +104,9 @@
     _expandedHeaderView.alpha = expandRatio;
     _collapsedHeaderView.alpha = 1 - expandRatio;
     _headerHeightConstraint.constant = height;
-    [_delegate scrollViewDidScroll:scrollView];
+    if ([_delegate respondsToSelector:@selector(scrollViewDidScroll:)]) {
+        [_delegate scrollViewDidScroll:scrollView];
+    }
 }
 
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {

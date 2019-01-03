@@ -16,6 +16,9 @@
 		C1B35A6D21DDAE7C0030E73C /* CathayHoldingsHWTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B35A6C21DDAE7C0030E73C /* CathayHoldingsHWTests.m */; };
 		C1B35A7A21DDC66B0030E73C /* ExpandableHeaderTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B35A7921DDC66B0030E73C /* ExpandableHeaderTableView.m */; };
 		C1B35A7F21DDDBC80030E73C /* UIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B35A7E21DDDBC80030E73C /* UIUtils.m */; };
+		C1EEF3DB21DDFAA300B41E70 /* HTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EEF3DA21DDFAA300B41E70 /* HTTPManager.m */; };
+		C1EEF3DF21DDFB4200B41E70 /* Plant.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EEF3DE21DDFB4200B41E70 /* Plant.m */; };
+		C1EEF3E221DDFB4D00B41E70 /* PlantProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EEF3E121DDFB4D00B41E70 /* PlantProvider.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,12 @@
 		C1B35A7921DDC66B0030E73C /* ExpandableHeaderTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExpandableHeaderTableView.m; sourceTree = "<group>"; };
 		C1B35A7D21DDDBC80030E73C /* UIUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIUtils.h; sourceTree = "<group>"; };
 		C1B35A7E21DDDBC80030E73C /* UIUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIUtils.m; sourceTree = "<group>"; };
+		C1EEF3D921DDFAA300B41E70 /* HTTPManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPManager.h; sourceTree = "<group>"; };
+		C1EEF3DA21DDFAA300B41E70 /* HTTPManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTTPManager.m; sourceTree = "<group>"; };
+		C1EEF3DD21DDFB4200B41E70 /* Plant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Plant.h; sourceTree = "<group>"; };
+		C1EEF3DE21DDFB4200B41E70 /* Plant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Plant.m; sourceTree = "<group>"; };
+		C1EEF3E021DDFB4D00B41E70 /* PlantProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlantProvider.h; sourceTree = "<group>"; };
+		C1EEF3E121DDFB4D00B41E70 /* PlantProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlantProvider.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +97,9 @@
 			isa = PBXGroup;
 			children = (
 				C1B35A7721DDAE980030E73C /* UI */,
+				C1EEF3DC21DDFAD300B41E70 /* Model */,
+				C1EEF3E321DDFB9C00B41E70 /* Controller */,
+				C1EEF3D821DDFA8C00B41E70 /* Network */,
 				C1B35A7C21DDDBB70030E73C /* Utils */,
 				C1B35A5321DDAE7B0030E73C /* AppDelegate.h */,
 				C1B35A5421DDAE7B0030E73C /* AppDelegate.m */,
@@ -127,6 +139,33 @@
 				C1B35A7E21DDDBC80030E73C /* UIUtils.m */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		C1EEF3D821DDFA8C00B41E70 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C1EEF3D921DDFAA300B41E70 /* HTTPManager.h */,
+				C1EEF3DA21DDFAA300B41E70 /* HTTPManager.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		C1EEF3DC21DDFAD300B41E70 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C1EEF3DD21DDFB4200B41E70 /* Plant.h */,
+				C1EEF3DE21DDFB4200B41E70 /* Plant.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C1EEF3E321DDFB9C00B41E70 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C1EEF3E021DDFB4D00B41E70 /* PlantProvider.h */,
+				C1EEF3E121DDFB4D00B41E70 /* PlantProvider.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +270,10 @@
 			files = (
 				C1B35A5821DDAE7B0030E73C /* ViewController.m in Sources */,
 				C1B35A6321DDAE7C0030E73C /* main.m in Sources */,
+				C1EEF3DF21DDFB4200B41E70 /* Plant.m in Sources */,
 				C1B35A7A21DDC66B0030E73C /* ExpandableHeaderTableView.m in Sources */,
+				C1EEF3E221DDFB4D00B41E70 /* PlantProvider.m in Sources */,
+				C1EEF3DB21DDFAA300B41E70 /* HTTPManager.m in Sources */,
 				C1B35A5521DDAE7B0030E73C /* AppDelegate.m in Sources */,
 				C1B35A7F21DDDBC80030E73C /* UIUtils.m in Sources */,
 			);

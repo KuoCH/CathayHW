@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
                        collapsedHeight:(CGFloat)collapsedHeight;
 @property (nonatomic, weak) id<UITableViewDataSource> dataSource;
 @property (nonatomic, weak) id<UITableViewDelegate> delegate;
+- (void)reloadRowsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation;
+- (void)insertRowsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation;
 @end
 
 NS_ASSUME_NONNULL_END

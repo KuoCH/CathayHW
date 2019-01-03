@@ -10,6 +10,7 @@
 #import "ExpandableHeaderTableView.h"
 #import "UIUtils.h"
 #import "PlantProvider.h"
+#import "PlantCell.h"
 
 #define DATA_CELL_ID @"data"
 
@@ -62,21 +63,25 @@
 
 @implementation ViewController (UITableView)
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:DATA_CELL_ID];
-    UILabel *label;
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                      reuseIdentifier:@"items"];
-        label = [UILabel new];
-        label.translatesAutoresizingMaskIntoConstraints = NO;
-        [cell.contentView addSubview:label];
-        [UIUtils fillParentVertical:label];
-        [UIUtils fillParentHorizontal:label];
-        label.tag = 1;
+    if (indexPath.section == 0) {
+        PlantCell *cell = [PlantCell new];
+        cell.plant = _plants[indexPath.row];
+        return cell;
     } else {
-        label = [cell.contentView viewWithTag:1];
-    }
-    if (indexPath.section == 1) {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:DATA_CELL_ID];
+        UILabel *label;
+        if (!cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                          reuseIdentifier:@"items"];
+            label = [UILabel new];
+            label.translatesAutoresizingMaskIntoConstraints = NO;
+            [cell.contentView addSubview:label];
+            [UIUtils fillParentVertical:label];
+            [UIUtils fillParentHorizontal:label];
+            label.tag = 1;
+        } else {
+            label = [cell.contentView viewWithTag:1];
+        }
         switch (self.plantProvider.state) {
             case PlantProviderStatePreparing:
                 label.text = @"Preparing";
@@ -97,10 +102,8 @@
                 label.text = @"Error!";
                 break;
         }
-    } else {
-        label.text = _plants[indexPath.row].name;
+        return cell;
     }
-    return cell;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -120,6 +123,22 @@
         [self.expandableHeaderTableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:1]] withRowAnimation:YES];
     }
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        return [PlantCell heightForPlant:_plants[indexPath.row]];
+    } else {
+        return 44;
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        return [PlantCell heightForPlant:_plants[indexPath.row]];
+    } else {
+        return 44;
+    }
+}
 @end
 
 @implementation ViewController (PlantProviderDelegate)
@@ -128,7 +147,7 @@
 }
 
 - (void)onProviderSetupFailed:(nonnull NSError *)error {
-    [self.expandableHeaderTableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:1]] withRowAnimation:YES];
+    [self.expandableHeaderTableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:1]] withRowAnimation:NO];
 }
 
 - (void)onQuerySuccess {
@@ -142,7 +161,7 @@
 }
 
 - (void)onQueryFailed:(nonnull NSError *)error {
-    [self.expandableHeaderTableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:1]] withRowAnimation:YES];
+    [self.expandableHeaderTableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:1]] withRowAnimation:NO];
 }
 
 @end

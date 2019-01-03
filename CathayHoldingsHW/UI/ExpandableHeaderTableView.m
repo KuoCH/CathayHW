@@ -44,6 +44,7 @@
     _tableView = [UITableView new];
     _tableView.translatesAutoresizingMaskIntoConstraints = NO;
     _tableView.delegate = self;
+    _tableView.bounces = NO;
     _tableView.contentInset = UIEdgeInsetsMake(_expandedHeight, 0, 0, 0);
     [_tableView setContentOffset:CGPointMake(0, -_expandedHeight) animated:NO];
     [self addSubview:_tableView];
@@ -124,6 +125,14 @@
     id<UITableViewDelegate> delegate = self.delegate;
     if (delegate && [delegate respondsToSelector:@selector(tableView:heightForRowAtIndexPath:)]) {
         return [delegate tableView:tableView heightForRowAtIndexPath:indexPath];
+    }
+    return 44;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    id<UITableViewDelegate> delegate = self.delegate;
+    if (delegate && [delegate respondsToSelector:@selector(tableView:estimatedHeightForRowAtIndexPath::)]) {
+        return [delegate tableView:tableView estimatedHeightForRowAtIndexPath:indexPath];
     }
     return 44;
 }

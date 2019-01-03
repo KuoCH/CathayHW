@@ -180,6 +180,7 @@
 }
 
 - (void)query {
+    NSLog(@"Query");
     @synchronized (self) {
         if (self.state != PlantProviderStateIdle && self.state != PlantProviderStateQueryFailed) {
             return;

@@ -19,6 +19,7 @@
 		C1EEF3DB21DDFAA300B41E70 /* HTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EEF3DA21DDFAA300B41E70 /* HTTPManager.m */; };
 		C1EEF3DF21DDFB4200B41E70 /* Plant.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EEF3DE21DDFB4200B41E70 /* Plant.m */; };
 		C1EEF3E221DDFB4D00B41E70 /* PlantProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EEF3E121DDFB4D00B41E70 /* PlantProvider.m */; };
+		C1EEF3E821DE222C00B41E70 /* PlantCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EEF3E721DE222C00B41E70 /* PlantCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		C1EEF3DE21DDFB4200B41E70 /* Plant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Plant.m; sourceTree = "<group>"; };
 		C1EEF3E021DDFB4D00B41E70 /* PlantProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlantProvider.h; sourceTree = "<group>"; };
 		C1EEF3E121DDFB4D00B41E70 /* PlantProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlantProvider.m; sourceTree = "<group>"; };
+		C1EEF3E621DE222C00B41E70 /* PlantCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlantCell.h; sourceTree = "<group>"; };
+		C1EEF3E721DE222C00B41E70 /* PlantCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlantCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,8 @@
 			children = (
 				C1B35A7821DDC66B0030E73C /* ExpandableHeaderTableView.h */,
 				C1B35A7921DDC66B0030E73C /* ExpandableHeaderTableView.m */,
+				C1EEF3E621DE222C00B41E70 /* PlantCell.h */,
+				C1EEF3E721DE222C00B41E70 /* PlantCell.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -275,6 +280,7 @@
 				C1EEF3E221DDFB4D00B41E70 /* PlantProvider.m in Sources */,
 				C1EEF3DB21DDFAA300B41E70 /* HTTPManager.m in Sources */,
 				C1B35A5521DDAE7B0030E73C /* AppDelegate.m in Sources */,
+				C1EEF3E821DE222C00B41E70 /* PlantCell.m in Sources */,
 				C1B35A7F21DDDBC80030E73C /* UIUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
